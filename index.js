@@ -16,7 +16,19 @@ app.get('/', function (req, res) {
 });
 
 app.get('/ticker', function (req, res) {
-    request(API_URL + '/ticker', function (error, response, body) {
+    request(API_URL + '/ticker/?limit=20', function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            res.send(body)
+        } else {
+            res.send(error);
+        }
+    })
+});
+
+app.get('/ticker/:currency', function (req, res) {
+    var currency = req.params.currency;
+
+    request(API_URL + '/ticker/?convert=' + currency +'&limit=20', function (error, response, body) {
         if (!error && response.statusCode == 200) {
             res.send(body)
         } else {
