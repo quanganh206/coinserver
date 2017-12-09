@@ -1,0 +1,30 @@
+{
+  "name": "coinserver",
+  "version": "1.0.0",
+  "description": "coinserver expose server market",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quanganh206/coinserver.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "ethereum",
+    "coin",
+    "market",
+    "information"
+  ],
+  "author": "quanganh@aiti.com.vn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quanganh206/coinserver/issues"
+  },
+  "homepage": "https://github.com/quanganh206/coinserver#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "request": "^2.83.0"
+  }
+}
