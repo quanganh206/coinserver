@@ -84,6 +84,17 @@ app.get('/global/:currency', function (req, res) {
     })
 });
 
+app.get('/history/:coin', function (req, res) {
+    var coin = req.params.coin;
+    request('http://coincap.io/history/7day/' + coin, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            res.send(body)
+        } else {
+            res.send(error);
+        }
+    })
+});
+
 app.listen(3456, function () {
     console.log('Example app listening on port 3000!');
 });
